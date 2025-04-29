@@ -78,6 +78,7 @@ Run the application:
 python app.py
 
 Open http://localhost:5000 in your browser.
+```
 ⚠️ Important Note
 
     OpenAI API usage requires a paid account with billing enabled.
@@ -100,8 +101,8 @@ Open http://localhost:5000 in your browser.
 ├── README.md              # Project documentation
 ├── .env.example           # Example environment config
 
-```
-🧠 Future Improvements (Ideas)
+
+🧠 Future Improvements (Ideas) 
 
     Integrate CLIP/BLIP to auto-generate image descriptions.
 
