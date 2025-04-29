@@ -55,3 +55,58 @@ Clone the repository:
 git clone https://github.com/Amarnath001/Multi_Image_Generator.git
 cd Multi_Image_Generator
 
+# Windows
+python -m venv venv
+venv\\Scripts\\activate
+
+# macOS/Linux
+python3 -m venv venv
+source venv/bin/activate
+
+Install the dependencies:
+
+pip install -r req.txt
+
+Create a .env file in the project root:
+
+API_KEY=your-openai-api-key-here
+
+Make sure the folders uploads/ and outputs/ exist (or will be created automatically).
+
+Run the application:
+
+python app.py
+
+Open http://localhost:5000 in your browser.
+⚠️ Important Note
+
+    OpenAI API usage requires a paid account with billing enabled.
+
+    Without GPT-4 Vision or DALL·E 3 access, full testing may not work.
+
+    The code is structured for production-grade quality following OpenAI's API documentation.
+
+📁 Project Structure
+
+├── app.py                # Main Flask server
+├── get_api.py             # OpenAI API interaction (GPT-4 Vision + DALL·E 3)
+├── image_utils.py         # Image preprocessing helper
+├── req.txt                # Python package requirements
+├── templates/             # HTML pages (upload form + result page)
+│   ├── index.html
+│   └── result.html
+├── uploads/               # Uploaded images (runtime)
+├── outputs/               # Generated output images
+├── README.md              # Project documentation
+├── .env.example           # Example environment config
+
+🧠 Future Improvements (Ideas)
+
+    Integrate CLIP/BLIP to auto-generate image descriptions.
+
+    Add user-selectable style fusion (choose style/background separately).
+
+    Support Stable Diffusion as an alternative backend.
+
+    Enable batch generation for multiple fused outputs.
+
