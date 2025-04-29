@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Multi-Image Generator</title>
+</head>
+<body>
+    <h1>Upload 3-5 Images + Enter a Prompt</h1>
+
+    <form action="/generate" method="post" enctype="multipart/form-data">
+        <label>Select Images:</label><br>
+        <input type="file" name="images" accept="image/*" multiple><br><br>
+
+        <label>Instruction Prompt:</label><br>
+        <textarea name="prompt" rows="4" cols="50" placeholder="Describe how to combine the images..." required></textarea><br><br>
+
+        <button type="submit">Generate Image</button>
+    </form>
+</body>
+</html>
