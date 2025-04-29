@@ -32,8 +32,6 @@ Built with a focus on modularity, clean architecture, and secure API usage.
 
 ## 📸 Demo
 
-*(Insert a screenshot or gif of upload ➔ generate ➔ output screen here)*
-
 Example:  
 > Upload 3–5 images → Enter prompt → View AI-generated fusion!
 
