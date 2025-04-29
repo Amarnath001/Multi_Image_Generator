@@ -100,6 +100,7 @@ Open http://localhost:5000 in your browser.
 ├── README.md              # Project documentation
 ├── .env.example           # Example environment config
 
+```
 🧠 Future Improvements (Ideas)
 
     Integrate CLIP/BLIP to auto-generate image descriptions.
