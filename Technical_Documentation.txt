@@ -1,0 +1,48 @@
+# Multi-Image Generation Tool - Amarnath Kaushik
+
+## Objective
+This project allows users to upload 3–5 reference images and a textual prompt. It generates a new AI image that combines elements from those images, guided by the prompt, using OpenAI's image generation capabilities (e.g., DALL·E 3).
+
+## Tech Stack
+- Python 3.8+
+- Flask (Web Interface)
+- OpenAI API (Image generation)
+- Pillow (Image processing)
+- Requests
+- python-dotenv (Credential management)
+
+## How It Works
+
+### 1. User Interface
+- HTML form (`index.html`) accepts 3–5 images and a prompt.
+- Images are uploaded to the Flask backend (`app.py`), which saves them temporarily.
+
+### 2. Preprocessing
+- Images are validated for count (between 3 and 5).
+- They are optionally resized or converted to ensure compatibility (`image_utils.py`).
+
+### 3. Prompt Engineering
+- Since DALL·E cannot take multiple images directly, we simulate "fusion" by:
+  - Extracting semantic or visual context from each image manually or via filename tags (future versions could use CLIP/BLIP).
+  - Embedding that context into the user prompt programmatically or relying on a detailed user prompt.
+
+### 4. Image Generation
+- The processed prompt is sent to OpenAI's DALL·E 3 via the `openai.Image.create()` call in `api.py`.
+- The generated image is saved locally in `.png` format.
+
+### 5. Output
+- The result is rendered in `result.html`.
+- The image path or Base64 string can be retrieved for downstream use.
+
+## Error Handling
+- If an incorrect number of images is uploaded, the user is notified.
+- API errors are caught and logged with user-friendly feedback.
+- Invalid file formats are rejected securely.
+
+## Security
+- The OpenAI API key is stored securely in a `.env` file and accessed via `get_api.py`.
+
+## Future Improvements
+- Integrate BLIP/CLIP for automatic image captioning and better prompt generation.
+- Use inpainting or compositional control (if OpenAI expands multimodal support).
+- Add user options to select which image contributes style, object, or background.
